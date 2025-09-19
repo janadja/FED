@@ -13,13 +13,14 @@
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
-:root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+:root{
+	--main-kleur: #00C300; /*kpn-groen*/
+	--accent-kleur: #DDFF44; /*kpn-neongroen*/
+	--accent2-kleur: #0066EE; /*blauwe kleur knoppen en links*/
+	--text-kleur: #ffffff; /*wit*/
+	--text2-kleur: #131313; /*zwart*/ 
+	--text3-kleur: #333333; /*grijs*/
 }
-
-
 
 
 
@@ -29,3 +30,72 @@
 
 /* jouw code */
 
+
+/*nav opmaak*/
+header{
+	display:flex;
+  	flex-direction: column;
+  	align-items:center;
+	position:sticky;
+	top:0;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+body img{ 
+	width: 1em;	
+}
+nav{
+	order:-1;
+	display:flex;
+  	justify-content:space-between;
+  	align-items:center;
+	position:sticky;
+	top:0;	
+}
+nav button{
+	position:relative;
+	z-index:100;
+}
+nav.toonMenu button img{
+	
+	content:url(https://assets.codepen.io/274456/ui-icon-cross.svg);
+}
+nav ul{
+	position:fixed;
+  	left:0;
+  	right:0;
+  	top:0;
+  	bottom:0;
+  	translate:100% 0%;
+  	transition: translate .3s;
+}
+nav.toonMenu ul{
+	translate:0% 0%;
+}
+.mini-nav {
+	display: flex;
+	justify-content: flex-start;
+	gap: 1.2em;
+	background-color: var(--main-kleur);
+	padding: 5px 20px;
+	margin: 0;
+	font-size: 14px;
+	width: 100%;
+	
+}
+.mini-nav a{
+	text-decoration: none;
+	color: var(--text2-kleur)
+	
+}
+.main-nav{
+	margin:0;
+}
+.main-nav img{
+	width: 5em;
+}
+.main-nav ul img form img{
+	width: 2em;
+}
