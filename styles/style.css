@@ -30,6 +30,10 @@
 
 /* jouw code */
 
+@font-face {
+	font-family: 'koppen';
+	src: url('../fonts/metric-bold.woff2') format('woff2');
+}
 
 /*nav opmaak*/
 header{
@@ -438,7 +442,7 @@ section:nth-of-type(6) h2,
 section:nth-of-type(7) h2
 {
 	color: var(--main-kleur); 
-	font-family: 'Poppins',sans-serif;
+	font-family: 'koppen',sans-serif;
 	font-size: 2em;
 	display: flex;
 	justify-content: flex-start;
@@ -448,6 +452,8 @@ section:nth-of-type(7) h2
 /*articles*/
 section:nth-of-type(6) article {
     background-color: #fff;
+	display: grid;
+	grid-template-columns: (2,1fr);
     border-radius: 30px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-family: 'Poppins', sans-serif;
@@ -507,6 +513,11 @@ section:nth-of-type(7) p{
 }
 section:nth-of-type(7) li{
 	list-style: none;
+	border-radius: 30px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 
+svg {
+	fill: orange;
+}
