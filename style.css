@@ -1,0 +1,1258 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root{
+	--main-kleur: #00C300; /*kpn-groen*/
+	--main-kleur2: #00A800; /*kpn-donkergroen*/
+	--accent-kleur: #DDFF44; /*kpn-neongroen*/
+	--accent2-kleur: #0066EE; /*blauwe kleur knoppen en links*/
+	--text-kleur: #ffffff; /*wit*/
+	--text2-kleur: #131313; /*zwart*/ 
+	--text3-kleur: #333333; /*grijs*/
+}
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+
+/* jouw code */
+
+@font-face {
+	font-family: 'koppen';
+	src: url('../fonts/metric-bold.woff2') format('woff2');
+}
+svg {
+	width: 2.2em;
+	height: 2.2em;
+	fill: var(--text2-kleur);
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+} 
+
+/*nav opmaak*/
+
+header{
+	width: 100%;
+	position: sticky;
+	top: 0;
+    z-index: 1000;
+    background-color: var(--text-kleur); /* Basiskleur voor de main-nav */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  	align-items:center;	
+}
+/*---miniNav---*/
+.mini-nav {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0;
+	background-color: var(--main-kleur);
+	padding: 5px 20px;
+	width: 100%;
+    height: 30px;
+}
+.mini-nav a{
+	text-decoration: none;
+	color: var(--text2-kleur);
+	font-size: 12px;
+	padding: 5px 10px;
+}
+.mini-nav a:first-of-type{
+	background-color: var(--accent-kleur);
+	border-radius: 999px;
+}
+/*---mainNav---*/
+.main-nav{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 70px;
+    position: relative;
+}
+/* KPN Logo */
+.main-nav img[alt="kpn logo"] {
+    width: auto;
+    height: 35px; 
+}
+/* Iconenlijst */
+.main-nav .icon-list {
+    list-style: none;
+   	display: flex ;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+	margin-left: auto;
+	
+}
+
+.main-nav .icon-list li img {
+    width: 20px; /* Icon grootte */
+    height: 20px;
+}
+/*---- Zoekbalk Formulier----*/
+.main-nav .icon-list li:nth-child(2) {
+    cursor: pointer;
+}
+.main-nav form {
+    /* De afbeelding toont de zoekbalk direct naast de iconen */
+   	position: absolute; 
+    top: 100%; /* Onder de main-nav */
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--text-kleur);
+    z-index: 999;
+    border-top: 1px solid var(--kpn-grijs);
+    display: none; 
+    transition: opacity 0.3s ease;
+    align-items: center;
+}
+
+.main-nav form.active {
+    display: flex; /* Zichtbaar bij activatie */
+    
+}
+
+.main-nav form input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+/* De knop in de form is nu de 'X' sluitknop */
+.main-nav form button {
+    background: none;
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.main-nav form button::after {
+    content: '×'; /* Gebruik het vermenigvuldigingsteken voor de 'X' */
+    font-size: 24px; 
+    color: #333;
+    display: block;
+}
+/*---menu lijst----*/
+.menu-button {
+    /* De achtergrond moet lichtgrijs/wit zijn en afgerond */
+    background: var( #f0f0f0); /* Stel een lichte kleur in. Ik gebruik een fallback */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px; /* Voeg padding toe om de knop groter te maken */
+    border-radius: 999px; /* Maak hem pilvormig */
+    margin-left: 10px; /* Voeg wat ruimte toe tussen de iconen en de knop */
+    
+}
+.menu-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+/* Standaard: toon de 'Open' staat, verberg de 'Sluit' staat */
+.menu-button .close-state {
+    display: none;
+}
+/* Wanneer de knop of een parent een 'active' of 'open' class krijgt: */
+.main-nav.menu-open .menu-button .open-state {
+    display: none; /* Verberg 'Menu' */
+}
+.main-nav.menu-open .menu-button .close-state {
+    display: flex; /* Toon 'Sluit' */
+    align-items: center;
+}
+/*---menu lijst (Hamburger Menu Inhoud)----*/
+
+/* Selecteer alle UL's direct onder .main-nav */
+.main-nav > ul:last-of-type {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: var(--text-kleur); /* Wit */
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s;
+    z-index: 998; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border-top: 1px solid var(--kpn-grijs);
+}
+.main-nav > ul:last-of-type li { 
+    padding: 18px 20px; 
+    border-bottom: 1px solid var(--kpn-grijs, #ddd); 
+}
+
+.main-nav > ul li {
+    padding: 10px 10px;
+	position: relative; 
+    cursor: pointer;
+	display: flex;
+	align-items: center;
+	margin: 0;
+}
+.main-nav > ul li a {
+    text-decoration: none;
+    display: flex; 
+    align-items: center;
+}
+.main-nav > ul:last-of-type li::after {
+    content: '›'; /* Of gebruik een pijlteken van een icon font */
+    color: var(--kpn-grijs), #888; /* Gebruik een grijstint voor de pijl */
+    position: absolute;
+    right: 20px; /* Plaats de pijl aan de rechterkant */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Activeer het menu wanneer .main-nav de class 'menu-open' heeft */
+.main-nav.menu-open > ul {
+    transform: translateY(0); /* Schuif het menu naar beneden (zichtbaar) */
+    opacity: 1;
+    visibility: visible;
+}
+.main-nav > ul:nth-of-type(2) li img {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+.main-nav > ul li:nth-child(5) {
+    /* De item-lijn zelf is 1px */
+    margin-bottom: 20px; /* Ruimte onder de lijn */
+}
+.main-nav > ul li:nth-child(6) {
+    border-top: 15px solid  #f0f0f0; /* Dikke, lichte grijze lijn */
+    padding-top: 18px;
+    margin-top: -5px; /* Corrigeer de margin-bottom van het vorige item */
+}
+
+.main-nav > ul li:nth-child(7) {
+    border-bottom: 15px solid  #f0f0f0; /* Dikke, lichte grijze lijn */
+}
+
+.main-nav > ul li:last-child,
+.main-nav > ul li:nth-of-type(5) {
+    border-bottom: none;
+}
+
+
+
+
+/*section 1*/
+main section:first-of-type{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background-color: var(--text2-kleur);
+	overflow: hidden;
+	padding: 30px 5px;
+}
+main section:first-of-type img{
+	max-width: 25em;
+	width: 100%;
+	object-fit:cover;
+	object-position: center;
+	display: block;
+}
+main section:first-of-type h1,
+main section:first-of-type p{
+	font-family: sans-serif;
+	color: var(--text-kleur);
+	margin: 0;  
+	padding: 20px 30px;
+}
+main section:first-of-type h1{
+	font-size: 15px;
+	font-weight: 200;
+	padding-bottom: 0;
+}
+main section:first-of-type p{
+	font-size: 43px;
+	font-weight: 900;
+	font-family: 'koppen', sans-serif;
+	padding-top: 10px;
+}
+/*knoppen voor linkjes*/ 
+main section:first-of-type a:first-of-type,
+main section:first-of-type a:nth-of-type(2){
+	width: 20em;
+	text-align: center;
+	font-weight: 400;
+	padding: 0.8em;
+	margin: 0.5em 2.5em;
+	border-radius: 999px;
+	
+}
+main section:first-of-type a:first-of-type{
+	background-color: var(--accent-kleur);
+	color: var(--text3-kleur);
+}
+main section:first-of-type a:nth-of-type(2){
+	background-color: transparent;
+	border: 2px solid var(--accent-kleur);
+	color: var(--text-kleur);
+}
+/*section 2*/
+section:nth-of-type(2) h2 {
+	color: var(--main-kleur2); 
+	font-family: 'koppen',sans-serif;
+	font-size: 2.8em;
+	display: flex;
+	justify-content: flex-start;
+	padding-left: 0.5em;
+	margin-bottom: 0;
+}
+  
+  
+section:nth-of-type(2) ul {
+	list-style: none;
+	padding: 0;
+	margin: 16px;
+}
+  
+/* Eerste ul: buttons */
+section:nth-of-type(2) ul:first-of-type {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 1em;
+	padding: 0;  
+	border-radius: 999px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	height: 3em;
+}
+  
+  /* Buttons */
+section:nth-of-type(2) button {
+	font-family: 'Poppins', sans-serif;
+	border: none;
+	border-radius: 999px;
+	padding: 10px 20px;
+	width: 12em;
+}
+  
+section:nth-of-type(2) button.active {
+	background-color: var(--accent-kleur);
+	color: var(--text2-kleur);
+	font-weight: 600;
+}
+  
+  /* Card-grid */
+.card-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+	padding: 1em;
+}
+  
+.card-grid li {
+	border-radius: 40px;
+	padding: 24px 0;
+	text-align: center;
+	box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+  
+.card-grid img {
+	width: 90px;
+	height: auto;
+}
+  
+.card-grid a {
+	text-decoration: none;
+	font-family: 'Poppins', sans-serif;
+	font-size: 18px;
+	font-weight: 350;
+	color: #0066ff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; 
+	gap: 5px;
+}
+  
+/* Verborgen grid */
+.hidden {
+	display: none;
+}
+
+/*section3*/
+section:nth-of-type(3) {
+	background-color: var(--text2-kleur);
+	padding: 40px 20px;  /* gelijke ruimte links/rechts */
+}
+  
+/* Video */
+section:nth-of-type(3) video {
+	width: 20em;
+	margin: 1.5em auto;
+	border-radius: 1.7em;
+	display: block; /* centreert video */
+}
+  
+/* Titels en tekst netjes onder elkaar */
+section:nth-of-type(3) h2,
+section:nth-of-type(3) h3,
+section:nth-of-type(3) p {
+	font-family: sans-serif;
+	color: var(--text-kleur);
+	margin: 0.5em 0;  /* gelijke verticale spacing */
+	padding: 0;
+	text-align: left;
+}
+  
+section:nth-of-type(3) h2 {
+	font-size: 15px;
+	font-weight: 200;
+}
+  
+section:nth-of-type(3) h3 {
+	font-family: 'Poppins', sans-serif;
+	font-size: 20px;
+	font-weight: 800;
+}
+  
+section:nth-of-type(3) p {
+	font-size: 15px;
+	font-weight: 200;
+}
+  
+/* Grote knop*/
+section:nth-of-type(3) > a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20em;
+	margin: 1.5em auto;
+  
+	text-decoration: none; 
+	background-color: var(--accent-kleur);
+	border-radius: 999px;
+	color: var(--text3-kleur);
+	padding: 0.5em 1em;
+	font-family: sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+}
+  
+/* Inline link in paragraaf */
+section:nth-of-type(3) p a {
+	display: inline;
+	padding: 0;
+	margin: 0;
+	color: var(--text-kleur); 
+	text-decoration: underline;
+	font-weight: 200;
+	font-family:'Poppins',sans-serif ;
+	letter-spacing: 0.5px;
+}
+
+/*section4*/
+section:nth-of-type(4) h2 {
+	color: var(--main-kleur2); 
+	font-family: 'koppen',sans-serif;
+	font-size: 2.5em;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding-left: 0.5em;
+}
+section:nth-of-type(4) h2 span{
+	display: inline-block;	
+}
+
+/*articles*/
+section:nth-of-type(4) article{
+	border-radius: 20px;
+	box-shadow: 5px 10px 20px rgba(0,0,0,0.1);
+	padding: 20px 20px;
+	margin: 1.5em;
+}
+section:nth-of-type(4) article img{
+	width: 90px;
+	margin: 0.5em;
+}
+section:nth-of-type(4) article a img{
+	width: 2em;
+	margin: 0;
+}
+section:nth-of-type(4) article a,img{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+section:nth-of-type(4) article h3{
+	color: var(--main-kleur2);
+	font-family: 'koppen',sans-serif;
+	font-size: 1.2em;
+	margin: 0;
+}
+section:nth-of-type(4) article p, a{
+	font-family: 'Poppins',sans-serif;
+	font-size: 15px;
+	font-weight: 200;
+	letter-spacing: 0.5px;
+	text-decoration: none;	
+}
+section:nth-of-type(4) a{
+	color: var(--accent2-kleur);
+}
+section:nth-of-type(4) svg{
+	fill: var(--accent2-kleur);
+	width: 25px;
+	height: 25px;
+}
+
+/*section5*/
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%); /* Begint aan de rechterkant, buiten beeld */
+        opacity: 0; /* Begint onzichtbaar */
+    }
+    100% {
+        transform: translateX(0); /* Schuift naar zijn oorspronkelijke positie */
+        opacity: 1; /* Wordt volledig zichtbaar */
+    }
+}
+
+section:nth-of-type(5){
+	background-color: var(--main-kleur);
+	padding: 20px 20px;
+	position: relative;
+}
+section:nth-of-type(5) > img:first-of-type{
+	width: 480px;
+	padding: 0;
+	position: relative;
+	left: -128px;
+}
+section:nth-of-type(5) img:nth-of-type(2){
+	width: 350px;
+	position: absolute;
+	top: 40px;
+	left: -10px;
+}
+section:nth-of-type(5) img:nth-of-type(3){
+	width: 120px;
+	position: absolute;
+	top: 50px;
+	right: 30px;
+	transform: translateX(100%);
+}
+section:nth-of-type(5).is-in-view img:nth-of-type(3) {
+    animation: slideInFromRight 1s ease-out forwards;
+}
+
+section:nth-of-type(5) h2{
+	color: var(--text2-kleur); 
+	font-family: 'Poppins',sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+}
+section:nth-of-type(5) h3{
+	color: var(--text-kleur); 
+	font-family: 'koppen',sans-serif;
+	font-size: 2.5em;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	margin:0;
+}
+section:nth-of-type(5) h3 span{
+	display: inline-block;
+} 
+section:nth-of-type(5) p{
+	color: var(--text2-kleur); 
+	font-family: 'Poppins',sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+}
+
+section:nth-of-type(5) >a:first-of-type{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 22em;
+	margin: 1em auto;
+  
+	text-decoration: none; 
+	background-color: var(--accent-kleur);
+	border-radius: 999px;
+	color: var(--text2-kleur);
+	padding: 0.8em 1em;
+	font-family: sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+}
+section:nth-of-type(5) a:nth-of-type(2){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 22em;
+	margin: 1em auto;
+
+	text-decoration: none; 
+	border: 3px solid var(--accent-kleur);
+	background: none;
+	border-radius: 999px;
+	color: var(--text2-kleur);
+	padding: 0.8em 1em;
+	font-family: sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+}
+section:nth-of-type(5) a img{
+	width: 2em;
+	margin: 0;
+	
+}
+section:nth-of-type(5) a, img{
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+}
+section:nth-of-type(5) a{
+	color: var(--text2-kleur);
+	font-weight: 400;
+}
+
+/*section 6*/
+section:nth-of-type(6) h2,
+section:nth-of-type(7) h2
+{
+	color: var(--main-kleur2); 
+	font-family: 'koppen',sans-serif;
+	font-size: 2.5em;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding-left: 0.5em;
+}
+/*articles*/
+section:nth-of-type(6) article {
+    background-color: #fff;
+	display: grid;
+	grid-template-columns: (2,1fr);
+    border-radius: 30px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Belangrijk voor afgeronde hoeken */
+    margin: 15px ;
+	
+}
+
+section:nth-of-type(6) article img {
+    border-top-left-radius: 30px; 
+    border-top-right-radius: 30px; 
+    width: 100%;
+    display: block;
+    height: 170px;
+    object-fit: cover;
+}
+section:nth-of-type(6) article h3{
+	color: var(--text2-kleur);
+	font-size: 15px;
+	font-weight: 200;
+	letter-spacing: 0.5px;
+	margin: 1em;
+	margin-bottom: 0.5em;
+}
+section:nth-of-type(6) article p{
+	color: var(--main-kleur2);
+	font-family: 'koppen',sans-serif;
+	font-size: 22px;
+	font-weight: 800;
+	letter-spacing: 0.5px;
+	margin: 0.6em;
+	margin-top: 0;
+}
+
+section:nth-of-type(6) article a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 2px solid var(--accent2-kleur);
+  border-radius: 999px;
+  padding: 0.6em 1.5em;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent2-kleur);
+  background-color: transparent;
+  margin: 1em;
+  width: 20em;
+  
+}
+section:nth-of-type(6) article:not(:first-of-type) a:first-of-type{
+  background-color: var(--accent2-kleur);
+  color: var(--text-kleur);
+  
+}
+section:nth-of-type(6) article:not(:first-of-type) a:first-of-type,
+section:nth-of-type(6) article:not(:first-of-type) a:nth-of-type(2){
+	width: 10em;
+	
+}
+
+
+/*section 7*/
+section:nth-of-type(7) p{
+	font-size: 15px;
+	font-weight: 350;
+	letter-spacing: 1.1px;
+	font-family: 'Poppins',sans-serif;
+	padding: 1.2em;
+	margin: 0;
+}
+section:nth-of-type(7) h2{
+	margin-bottom: 0;
+}
+section:nth-of-type(7) li p{
+	font-size: 15px;
+	font-weight: 350;
+	letter-spacing: 1.1px;
+	font-family: 'Poppins',sans-serif;
+	padding-left: 2em;
+	margin-top: 2em;
+	width: 200px;
+	line-height: 1.5em;
+}
+section:nth-of-type(7) .sticker{
+	background-color: var(--text2-kleur);
+	color: var(--accent-kleur);
+	position: absolute;
+	top: 80px;
+	left: 150px;
+	font-family: 'koppen',sans-serif;
+	font-size: 15px;
+	line-height: 1;
+	padding: 13px ;
+	margin: 0;
+	transform: skew(-4deg);
+	border-radius: 13px;
+	box-shadow: 2px 2px 2px var(--text3-kleur);
+	width: 70px;
+}
+section:nth-of-type(7) ul{
+	padding: 0.1em 1.5em;
+	display: flex;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+section:nth-of-type(7) li{
+	list-style: none;
+	border-radius: 40px; 
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+	margin: 0.5em; 
+	display: flex; 
+    flex-direction: column; 
+    position: relative; /* Belangrijk voor de absolute knop-positionering */
+	flex-shrink: 0;
+	width: 280px;
+	scroll-snap-align: start;
+	white-space: normal;
+}
+section:nth-of-type(7) ul::-webkit-scrollbar {
+    display: none; /* Voor Chrome, Safari, Opera */
+}
+section:nth-of-type(7) li img{
+	width: 9em;
+	padding: 2em;
+	padding-bottom: 1.5em;
+}
+section:nth-of-type(7) li img:nth-of-type(2){
+	position: absolute;
+	left: 3.5em;
+}
+section:nth-of-type(7) h3{
+	font-family: 'Poppins',sans-serif;
+	font-size: 15px;
+	font-weight: 350;
+	letter-spacing: 1.1px;
+	color: var(--text2-kleur);
+	padding-left: 2em;
+	margin: 0;
+}
+section:nth-of-type(7) h4{
+	font-family: 'koppen',sans-serif;
+	font-size: 30px;
+	margin: 0;
+	margin-top: 0.5em;
+	padding-left: 1em;
+	color: var(--main-kleur2);
+}
+section:nth-of-type(7) button{
+	background-color: var(--accent2-kleur); 
+     border: none;
+    padding: 0.35rem; 
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	position: absolute; 
+    right: 20px; 
+    bottom: 20px;
+}
+section:nth-of-type(7) svg{
+	fill: var(--text-kleur);
+}
+section:nth-of-type(7) a svg{
+	fill: var(--accent2-kleur);
+}
+section:nth-of-type(7) a{
+	display: flex;
+	flex-direction: column;
+}
+section:nth-of-type(7) a:first-of-type{
+	background-color: var(--accent2-kleur);
+	color: var(--text-kleur);
+	border-radius: 999px;
+	width: 200px;
+	padding: 1em;
+	justify-content: center;
+	align-items: center;
+	margin-left: 1.5em;
+}
+section:nth-of-type(7) a:nth-of-type(2){
+	color: var(--accent2-kleur);
+	font-family: 'Poppins',sans-serif;
+	font-weight: 350;
+	letter-spacing: 1.1px;
+	padding: 1em;
+	margin-left: 1.1em;
+	flex-direction: row;
+	align-items: center;
+}
+/*section 8*/
+section:nth-of-type(8) h2{
+	color: var(--main-kleur2); 
+	font-family: 'koppen',sans-serif;
+	font-size: 2.5em;
+	padding-left: 0.5em;
+	margin-bottom: 0;
+}
+section:nth-of-type(8) ul{
+	list-style:none; 
+	gap: 20px;
+	display: grid;
+	grid-template-columns: repeat(2, 2fr);	
+	padding: 20px;
+}
+section:nth-of-type(8) li{
+	margin: 0;
+	padding: 0.5em;
+	display: flex;
+	justify-content: center; 
+    align-items: center;
+	border-radius: 30px;
+	background-color: var(--text-kleur);
+	box-shadow: 0px 0.8px 12px rgba(0, 0, 0, 0.1);
+}
+section:nth-of-type(8) li img{
+	width: 140px;
+}
+section:nth-of-type(8) a{
+	color: var(--accent2-kleur);
+	font-family: 'Poppins',sans-serif;
+	font-weight: 350;
+	letter-spacing: 1.1px;
+	padding: 1em;
+	padding-top: 0;
+	margin-left: 1.1em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+section:nth-of-type(8) svg{
+	fill: var(--accent2-kleur);
+}
+/*section 9*/
+section:nth-of-type(9) h2{
+	color: var(--main-kleur2); 
+	font-family: 'koppen',sans-serif;
+	font-size: 2.5em;
+	padding-left: 0.5em;
+	margin-bottom: 0;
+}
+section:nth-of-type(9) p{
+	font-size: 15px;
+	font-weight: 350;
+	letter-spacing: 1.1px;
+	font-family: 'Poppins',sans-serif;
+	padding: 1.2em;
+	margin: 0;
+}
+section:nth-of-type(9) ul{
+	padding: 1em;
+	margin: 0;
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	gap: 15px;
+	overflow-y: hidden;
+
+}
+section:nth-of-type(9) ul::-webkit-scrollbar {
+    display: none; /* Voor Chrome, Safari, Opera */
+}
+section:nth-of-type(9) li{
+    background-color: #fff;
+	display: grid;
+    border-radius: 30px; 
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Belangrijk voor afgeronde hoeken */
+    margin: 15px 0px;
+	list-style: none;
+	height: 310px;
+	width: 290px;
+	flex-shrink: 0;
+
+}
+section:nth-of-type(9) ul img {
+    border-top-left-radius: 30px; 
+    border-top-right-radius: 30px; 
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+section:nth-of-type(9) ul h3{
+	color: var(--main-kleur2); 
+	font-family: 'koppen',sans-serif;
+	font-size: 1.5em;
+	padding-left: 0.5em;
+}
+section:nth-of-type(9) ul a{
+	font-family: 'Poppins',sans-serif;
+	font-size: 1em;
+	font-weight: 100;
+	color: var(--accent2-kleur);
+	line-height: 1px;
+	text-decoration: none;
+	padding-left: 0.8em;	
+}
+section:nth-of-type(9) ul a svg{
+	fill: var(--accent2-kleur);
+	width: 30px;
+	flex-shrink: 0;
+}
+/*section 10*/ 
+section:nth-of-type(10) h2{
+	color: var(--main-kleur2); 
+	font-family: 'koppen',sans-serif;
+	font-size: 2.5em;
+	padding-left: 0.5em;
+	
+}
+section:nth-of-type(10) ul{
+	list-style: none;
+	background-color: var(--text-kleur);
+	border-radius: 40px;
+	box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	margin: 1em;
+	padding: 0;
+	height: 460px;
+	font-family: 'Poppins', sans-serif;
+}
+section:nth-of-type(10) ul:nth-of-type(2){ 
+	height: 630px;
+}
+
+section:nth-of-type(10) ul:first-of-type li:first-child{
+	width: 100%;
+	height: 35%;
+	background-color: #EDFF9A;
+	display: flex;
+	justify-content: center;
+}
+section:nth-of-type(10) ul:first-of-type li:first-child img{
+	width: 25%;
+	height: 100%;
+	object-fit: contain;
+	box-sizing: border-box;
+	
+}
+section:nth-of-type(10) ul li:first-child img{
+	border-top-left-radius: 30px; 
+    border-top-right-radius: 30px; 
+    width: 100%;
+    display: block;
+	justify-content: center;
+    height: 190px;
+    object-fit: cover;
+}
+/* navigatielinks */
+section:nth-of-type(10) ul:first-of-type li:nth-child(n+3) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 20px;
+    color: #333;
+	padding-left: 25px;
+}
+
+section:nth-of-type(10) ul:first-of-type li:nth-child(n+4) {
+    border-top: 1px solid #dad9d9;
+	
+}
+/* pijltjes */
+section:nth-of-type(10) ul:first-of-type li:nth-child(n+3) img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+
+section:nth-of-type(10) h3{
+	font-family: 'koppen', sans-serif;
+	font-size: 25px;
+	color: var(--main-kleur2);
+	padding-left: 0.5em;
+	margin: 0.5em;
+}
+
+
+/*tweede ul card*/
+section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(3) h3{
+	margin-top: 0.2em ;
+}
+section:nth-of-type(10) li p{
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	font-weight: 200;
+	padding-left: 1.5em;
+	width: 300px;
+	line-height: 25px;
+}
+section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(2) p{
+	margin-bottom: 0;
+}
+section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(5) svg,
+section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(6) svg {
+    width: 20px;
+    height: 20px;
+    fill: #00A91D;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(5) p,
+section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(6) p {
+    margin: 5px 0;
+    width: 300px;
+}
+/*buttons*/
+
+section:nth-of-type(10) ul:nth-of-type(2) a {
+    display: block;
+    border-radius: 50px;
+    width: 300px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 auto;
+	padding: 15px 15px;
+}
+section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(7) {
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(7) a {
+    background-color: var(--accent2-kleur);
+    color: var(--text-kleur);
+    border: none;
+}
+section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(8) {
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(8) a {
+    background-color: transparent;
+    color: var(--accent2-kleur);
+    border: 2.5px solid var(--accent2-kleur);
+}
+/*----footer section----*/ 
+/*section 11*/
+footer section:nth-of-type(1) {
+    background-color: var(--main-kleur); 
+    padding: 1em; 
+}
+footer section:nth-of-type(1) h3{
+	color: var(--text3-kleur);
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+	font-weight: 330;
+	letter-spacing: 1px;
+	margin-bottom: 0.5em;
+}
+footer section:nth-of-type(1) p{
+	color: var(--text-kleur);
+	font-family: 'koppen',sans-serif;
+	font-size: 30px;
+	padding-left: 0;
+	margin: 0;
+}
+footer section:nth-of-type(1) a{
+	color: var(--text3-kleur);
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+	font-weight: 330;
+	letter-spacing: 1px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+footer section:nth-of-type(1) svg{
+	width: 25px;
+	fill: var(--text3-kleur);
+}
+/*ul dropdown-menu*/ 
+footer > ul:first-of-type {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid #EAEAEA; 
+}
+footer > ul:first-of-type > li {
+    padding: 15px 10px;
+    border-bottom: 1px solid #EAEAEA; 
+    font-size: 15px;
+    font-weight: 400; 
+    color: var(--text3-kleur);
+    cursor: pointer; 
+    position: relative; 
+    display: flex; /* Blijf Flex gebruiken voor de tekst en de pijl-ruimte */
+    justify-content: flex-start;
+    align-items: flex-start;
+	padding-right: 40px;
+	padding-left: 2em;
+}
+footer > ul:first-of-type ul {
+    list-style: none;
+	height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-left: 0; 
+    transition: all 0.3s ease-out; /* Zorgt voor een vloeiend uitklap-effect */
+    border-top: none; 
+}
+footer > ul:first-of-type ul li { /*opmaak sublijst*/
+    font-size: 0.95rem;
+    padding: 10px 10px;
+    color: #555555;
+    border-bottom: 1px solid #F0F0F0; 
+    cursor: pointer;
+	display: block;
+	
+}
+footer > ul:first-of-type ul li:last-of-type { 
+    border-bottom: none; /*laatste li in de sublijst krijgt geen lijn*/
+}
+footer > ul:first-of-type > li.active {
+    color: var(--kpn-green);  
+}
+footer > ul:first-of-type > li img {
+    width: 25px;
+    height: 25px;
+    transform: rotate(0deg); /* Roteert de pijl omhoog wanneer de menu-item geopend wordt */
+    transition: transform 0.3s ease-in-out; 
+	filter: invert(41%) sepia(97%) saturate(1475%) hue-rotate(85deg) brightness(97%) contrast(101%);
+	position: absolute;
+    right: 10px; /* Plaats de pijl 10px vanaf de rechterkant */
+    top: 20px;
+	transform: translateY(-50%) rotate(0deg);
+}
+footer > ul:first-of-type > li.active > img {
+    transform: translateY(-50%) rotate(180deg);
+}
+footer > ul:first-of-type ul.visible {
+    height: auto; 
+    opacity: 1;
+    overflow: visible;
+    padding-top: 10px;
+    /* Zorgt ervoor dat de animatie op de hoogte alleen werkt bij sluiten */
+    transition: opacity 0.3s ease-out; 
+}
+
+/*laatste ul's*/
+footer > ul:nth-of-type(2) {
+    list-style: none;
+    padding: 20px 0; /* Verticale padding rond de groep */
+    margin: 1em;
+    font-family: 'Poppins', sans-serif;
+    display: flex; 
+    flex-wrap: wrap; 
+	line-height: 20px; 
+	padding-left: 0.5em;
+}
+
+footer > ul:nth-of-type(2) li a {
+    font-size: 13px;
+	color: var(--text2-kleur);
+    text-decoration: none;
+    padding: 0 5px; /* Horizontale padding om afstand tot de stippen te creëren */
+    white-space: nowrap; /* Voorkom afbreken van de tekst */
+    
+}
+footer > ul:nth-of-type(2) li:not(:last-child)::after {
+    content: "•";
+    color: var(--text3-kleur);
+    font-size: 1.5rem; /* Maak de stip groot en opvallend */
+    margin-right: 10px; /* Zorg voor afstand tussen stip en volgende link */
+    vertical-align: middle;
+}
+/*mini-logos*/
+footer > ul:nth-of-type(3) {
+    list-style: none;
+    padding: 20px 0 40px; /* Ruimte onder de iconen */
+    margin: 0;
+	padding-left: 1.5em;
+    font-family: 'Poppins', sans-serif;
+}
+footer > ul:nth-of-type(3) li {
+    display: inline-block;
+	
+}
+footer > ul:nth-of-type(3) li img {
+    width: 25px; /* Grootte van de iconen */
+    height: 25px;
+	margin: 10px;
+	
+}
