@@ -8,7 +8,8 @@
 	
 	<title>kpn</title>
 	
-	<link href="styles/style.css" rel="stylesheet">
+	<link href="styles/algemeen.css" rel="stylesheet">
+    <link href="styles/pagina2.css" rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
 
@@ -16,85 +17,62 @@
 	<script defer src="scripts/script.js"></script>
 	<header>
         <nav class="mini-nav">
-            <a href= "https://www.kpn.com/?tv=ja&?icid=quicktile1" > consument </a> 
-            <a href= "https://www.kpn.com/zakelijk?tv=ja&?icid=quicktile1" > zakelijk </a> 
-            <nav class="main-nav">
-                <img src="images/kpn-logo.png" alt="kpn logo">
-                <ul>
-                 <li><img src="images/profile.png" alt="profiel-icon"></a></li>
-                <li><img src="images/cart.png" alt="winkelkar"></a></li>   
-                </ul>
-                <form>
-                    <input type="text" placeholder="Zoeken...">
-                    <button type="submit"><img src="images/search.png" alt="vergrootglas"></button>
-                </form>
-
-            <ul>
-                <li><a href="https://www.kpn.com/internet?tv=ja&?icid=quicktile1">Internet en Tv</a>
-                    <ul>
-                        <li><p>Internet en Tv</p></li>
-                        <li><p>Bestel</p></li>
-                            <li><a href="#">Naar de shop</a></li>
-                            <li><a href="#">glasvezel internet</a></li>
-                            <li><a href="#">Internet Only</a></li>
-                            <li><a href="#">Internet en TV</a></li>
-                            <li><a href="#">Wifiversterker</a></li>
-                            <li><a href="#">Abonnement verlengen</a></li>
-                       <li><p>Meer internet</p> </li>  
-                            <li><a href="#">Ontdek abonnementen</a></li>
-                            <li><a href="#">Doe de glasvezelcheck</a></li> 
-                            <li><a href="#">Verbeter je wifi</a></li> 
-                            <li><a href="#">Internet speed test</a></li> 
-                            <li><a href="#">Gaming</a></li> 
-                            <li><a href="#">Smart home</a></li> 
-                            <li><a href="#">Installatiehulp</a></li> 
-                            <li><a href="#">Hulp met Internet</a></li> 
-                        <li><p>Meer tv</p></li>
-                        <li><a href="#">Tv met tv-zenders</a></li>  
-                        <li><a href="#">KPN TV + Soundsbox</a></li> 
-                        <li><a href="#">Extra zenders en entertainment</a></li> 
-                        <li><a href="#">KPN TV app</a></li> 
-                        <li><a href="#">Opnemen Pakket voor tv</a></li> 
-                        <li><a href="#">Digitenne</a></li> 
-                        <li><a href="#">Zenderoverzicht</a></li>   
-                        <li><a href="#">Hulp met TV</a></li> 
-                    <li>
-                        <img src="" alt="">
-                        <p>Geef je wifi een boost</p>
-                        <a href="#">Verbeter je wifi</a>    
-                    </li>
-                    </ul>
-                </li>
-                <li><a href="https://www.kpn.com/mobiel-shop?tv=ja&?icid=quicktile1">Mobiel</a></li>
-                <li><a href="https://www.kpn.com/extra-diensten?tv=ja&?icid=quicktile1">Extra diensten</a></li>
-                <li><a href="https://www.kpn.com/voorjou?tv=ja&?icid=quicktile1">Voor jou</a></li>
-                <li><a href="https://www.kpn.com/service/ugs?tv=ja&?icid=quicktile1">Service</a></li>
-            </ul>  
-            <ul>
-                <li><p>Mijn kpn</p></li>
-                <li><a href="https://webmail.kpnmail.nl/mail/logon.asp?tv=ja&%3Ficid=quicktile1"> Webmail</a></li>
+            <a href= "https://www.kpn.com/?tv=ja&?icid=quicktile1" > Consument </a> 
+            <a href= "https://www.kpn.com/zakelijk?tv=ja&?icid=quicktile1" > Zakelijk </a> 
+        </nav> 
+        <nav class="main-nav">
+            <img src="images/kpn-logo.png" alt="kpn logo">
+            <ul class="icon-list">
+            <li><a><img src="images/profile.png" alt="profiel-icon"></a></li>
+            <li><img src="images/search.png" alt="vergrootglas"></li>
+            <li><a><img src="images/cart.png" alt="winkelkar"></a></li>   
             </ul>
-        </nav>
-        <nav>
+            <form>
+                <input type="text" placeholder="Zoeken...">
+                <button type="submit"></button>
+            </form>
+           <button id="menuToggle" class="menu-button">
+                <span class="open-state">
+                    <img src="images/hamburger.png" alt="hamburgermenu"> Menu
+                </span>
+                <span class="close-state">
+                    <img src="images/close.png" alt="sluiticon"> Sluit
+                </span>
+            </button>
             <ul>
+                <li>Internet en Tv</li>
+                <li>Mobiel</li>
+                <li>Extra diensten</li>
+                <li>Voor jou</li>
+                <li>Service</li>
+                <li> <img src="images/profile.png" alt="profiel icon">Mijn kpn</li>
+                <li> <img src="images/email.png" alt="mail icon"> Webmail</li>
+                <li>Glasvezelnetwerk</li>
+                <li>Daarom KPN</li>
+            </ul>
+        </nav>  
+        <nav >
+            <ul class="derde-nav">
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">Internet</a></li>
                 <li><a href="#">Internet en TV</a></li>
             </ul>
-        </nav>
-        <img src="" alt="Samsung 55-inch tv en Samsung laptop"> 
-        <h1>Internet en TV</h1>
-        <h2>Stel je pakket samen zoals jij dat wil</h2> 
-        <p>Een<strong>Samsung 55-inch tv of Samsung laptop</strong>als welkomscadeau</p>
-        <p>of ga voor 12 maanden internet (en tv) voor €35,-/mnd</p>
-        <p>Gratis overstapservice, je hoeft zelf niets te doen</p>  
+        </nav> 
     </header>
     <main>
         <section>
+            <img src="images/34_snelpakker_laptop_tv_transp__1_.png" alt="Samsung 55-inch tv en Samsung laptop"> 
+            <h1>Internet en TV</h1>
+            <h2>Stel je pakket samen zoals jij dat wil</h2> 
+            <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="100%" focusable="false" fill="currentColor" aria-hidden="true"><defs></defs><g><rect width="16" height="16" fill="none"></rect></g><g><path d="M13.92,2.77l-6.74,10.76c-.19.3-.5.47-.84.47h0c-.35,0-.66-.19-.85-.49l-3.42-5.7c-.14-.24-.06-.54.17-.69.24-.14.54-.07.69.17l3.42,5.7L13.08,2.23c.15-.23.46-.3.69-.16.23.15.31.46.16.69Z"></path></g></svg><strong>Samsung 55-inch tv of Samsung laptop</strong>als welkomscadeau</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="100%" focusable="false" fill="currentColor" aria-hidden="true"><defs></defs><g><rect width="16" height="16" fill="none"></rect></g><g><path d="M13.92,2.77l-6.74,10.76c-.19.3-.5.47-.84.47h0c-.35,0-.66-.19-.85-.49l-3.42-5.7c-.14-.24-.06-.54.17-.69.24-.14.54-.07.69.17l3.42,5.7L13.08,2.23c.15-.23.46-.3.69-.16.23.15.31.46.16.69Z"></path></g></svg>Of ga voor 12 maanden internet (en tv) voor €35,-/mnd</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="100%" focusable="false" fill="currentColor" aria-hidden="true"><defs></defs><g><rect width="16" height="16" fill="none"></rect></g><g><path d="M13.92,2.77l-6.74,10.76c-.19.3-.5.47-.84.47h0c-.35,0-.66-.19-.85-.49l-3.42-5.7c-.14-.24-.06-.54.17-.69.24-.14.54-.07.69.17l3.42,5.7L13.08,2.23c.15-.23.46-.3.69-.16.23.15.31.46.16.69Z"></path></g></svg>Gratis overstapservice, je hoeft zelf niets te doen</p>
+        </section>
+        <section>
             <h2>1. Check het aanbod op jouw adres</h2>
+            <p>Check de beschikbare internetsnelheden en aanbiedingen op jouw adres.</p>
             <form>
                 <fieldset>
-                 <legend>Check de beschikbare internetsnelheden en aanbiedingen op jouw adres.</legend> 
                  <label>Postcode<input type="text" value="1234AB" required pattern="[0-9]{4}\s? [A-Z]{2}"></label>
                  <label>Huisnr.<input type="text" value="10"></label> 
                  <label>Toev.<input type="text" value="A"></label>  
@@ -102,10 +80,11 @@
                 </fieldset>
                 <h3>KPN Combivoordeel<span class="info-icon">i</span></h3>
                 <p>Heb je al een KNP abonnement op jouw adres?</p>
-                <a href="">Meer informatie</a> 
+                <a href="#">Meer informatie <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="100%" focusable="false" fill="" aria-hidden="true"><defs></defs><g><rect width="16" height="16" fill="none"></rect></g><g><path d="M12.5,8.7l-4.14,4.14c-.1.1-.23.15-.35.15s-.26-.05-.35-.15c-.2-.2-.2-.51,0-.71l3.64-3.64H3.5c-.28,0-.5-.22-.5-.5s.22-.5.5-.5h7.8l-3.65-3.64c-.2-.2-.2-.51,0-.71s.51-.2.71,0l4.14,4.14c.39.39.39,1.02,0,1.41Z"></path></g></svg></a> 
                 <label><input type="checkbox">Ik heb KPN Internet(en TV)</label>
                 <label><input type="checkbox">Ik heb een KPN Mobiel</label>
             </form>
+       </section>
             <h2>2. Kies je welkomscadeau</h2>
             <p>Kies standaard een welkomscadeau bij een 1-of 2-jarige internet abonnement. Liever een maandelijks opzegbaar abonnement zonder cadeau? Dat kan ook!</p>
             <form>
@@ -589,22 +568,22 @@
             <a href="#">Op de kortingsactie zijn actievoorwaarden van toepassing.</a>
         </section>
     </main>
-    <footer>
+        <footer>
         <section>
             <h3>MijnKPN App</h3>
             <p>Gebruik jij 'm al?</p>
-            <a href="#">Ontdek de MijnKPN app</a> 
+            <a href="#">Ontdek de MijnKPN app <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="100%" focusable="false" fill="" aria-hidden="true"><defs></defs><g><rect width="16" height="16" fill="none"></rect></g><g><path d="M12.5,8.7l-4.14,4.14c-.1.1-.23.15-.35.15s-.26-.05-.35-.15c-.2-.2-.2-.51,0-.71l3.64-3.64H3.5c-.28,0-.5-.22-.5-.5s.22-.5.5-.5h7.8l-3.65-3.64c-.2-.2-.2-.51,0-.71s.51-.2.71,0l4.14,4.14c.39.39.39,1.02,0,1.41Z"></path></g></svg></a> 
 
             <h3>Zakelijk</h3>
             <p>Ben je ondernemer?</p>
-            <a href="#">Bekijk dan het zakelijk aanbod</a>
+            <a href="#">Bekijk dan het zakelijk aanbod <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="100%" focusable="false" fill="" aria-hidden="true"><defs></defs><g><rect width="16" height="16" fill="none"></rect></g><g><path d="M12.5,8.7l-4.14,4.14c-.1.1-.23.15-.35.15s-.26-.05-.35-.15c-.2-.2-.2-.51,0-.71l3.64-3.64H3.5c-.28,0-.5-.22-.5-.5s.22-.5.5-.5h7.8l-3.65-3.64c-.2-.2-.2-.51,0-.71s.51-.2.71,0l4.14,4.14c.39.39.39,1.02,0,1.41Z"></path></g></svg></a>
 
             <h3>Klanteservice</h3>
             <p>Heb je hulp nodig?</p>
-            <a href="#">Vind antwoord op al je vragen</a>
+            <a href="#">Vind antwoord op al je vragen <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="100%" focusable="false" fill="" aria-hidden="true"><defs></defs><g><rect width="16" height="16" fill="none"></rect></g><g><path d="M12.5,8.7l-4.14,4.14c-.1.1-.23.15-.35.15s-.26-.05-.35-.15c-.2-.2-.2-.51,0-.71l3.64-3.64H3.5c-.28,0-.5-.22-.5-.5s.22-.5.5-.5h7.8l-3.65-3.64c-.2-.2-.2-.51,0-.71s.51-.2.71,0l4.14,4.14c.39.39.39,1.02,0,1.41Z"></path></g></svg></a>
         </section>
             <ul>
-                <li>Mobiel
+                <li>Mobiel <img src="images/pijlbeneden.svg" alt="pijl naar beneden">
                     <ul>
                         <li>Alles voor Mobiel</li>
                         <li>Sim Only</li>
@@ -626,12 +605,12 @@
                         <li>Beleef Apps</li>
                     </ul>
                 </li>
-                <li>Populaire toestellen</li>
-                <li>Internet</li>
-                <li>TV & Entertainment</li>
-                <li>Apparaten 7 Accessoires</li>
-                <li>Service & Contact</li>
-                <li>Over KPN</li>
+                <li>Populaire toestellen <img src="images/pijlbeneden.svg" alt="pijl naar beneden"></li>
+                <li>Internet <img src="images/pijlbeneden.svg" alt="pijl naar beneden"></li>
+                <li>TV & Entertainment <img src="images/pijlbeneden.svg" alt="pijl naar beneden"></li>
+                <li>Apparaten 7 Accessoires <img src="images/pijlbeneden.svg" alt="pijl naar beneden"></li>
+                <li>Service & Contact <img src="images/pijlbeneden.svg" alt="pijl naar beneden"></li>
+                <li>Over KPN <img src="images/pijlbeneden.svg" alt="pijl naar beneden"></li>
             </ul> 
             <ul>
                 <li><a href="#">Bedrijftgegevens</a></li>
@@ -642,10 +621,10 @@
                 <li><a href="#">Beveiligingslek melden</a></li>
             </ul>
             <ul>
-                <li><a href="#">facebook <img src="" alt=""></a></li>
-                <li><a href="#">X <img src="" alt=""></a></li>
-                <li><a href="#">YouTube <img src="" alt=""></a></li>
-                <li> <a href="#">linked-in <img src="" alt=""></a></li>
+                <li><a href="#"><img src="images/facebook-svgrepo-com.svg" alt="facebook logo"></a></li>
+                <li><a href="#"><img src="images/x.svg" alt="X app logo"></a></li>
+                <li><a href="#"><img src="images/youtube-svgrepo-com.svg" alt="youtube"></a></li>
+                <li> <a href="#"><img src="images/linkedin-linked-in-svgrepo-com.svg" alt="linked in logo"></a></li>
             </ul>
     </footer>
 </body>	

@@ -1,0 +1,64 @@
+
+/*----derde navigatie----*/
+.derde-nav {
+    list-style: none;
+    padding: 1.5em;
+    margin: 0;
+    display: flex;
+}
+.derde-nav li {
+    margin-right: 20px; 
+}
+.derde-nav a {
+    text-decoration: none; 
+    color: var(--text3-kleur);       
+    font-size: 16px;   
+    font-family: 'Poppins',sans-serif;  
+}
+
+/*----section 1----*/
+section:first-of-type{
+    background-color: var(--main-kleur);
+    padding-left: 1em;
+}
+section:first-of-type h1{
+    font-size: 45px;   
+    font-family: 'koppen',sans-serif;
+    color: var(--text-kleur);
+    padding-top: 0;
+    margin: 0;
+}
+section:first-of-type h2{
+    font-size: 20px;   
+    font-family: 'Poppins',sans-serif;
+    font-weight: 200;
+    color: var(--text2-kleur);
+    margin: 0;
+    margin-top: 15px;
+    padding: 0;
+}
+section:first-of-type p{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.8em;
+    font-size: 1.05em;
+    line-height: 1.5;
+}
+section:first-of-type img:first-of-type{
+    width: 25em;
+    padding: 0;
+    padding-top: 1em;
+    margin: 0;
+    margin-left: -25px; 
+}
+section:first-of-type svg{
+   width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    flex-shrink: 0;
+    fill: var(--accent-kleur);
+}
+section:first-of-type p span {
+    display: inline; /* tekst blijft als normale zin */
+}

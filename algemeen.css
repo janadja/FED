@@ -1,0 +1,395 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root{
+    --main-kleur: #00C300; /*kpn-groen*/
+    --main-kleur2: #00A800; /*kpn-donkergroen*/
+    --accent-kleur: #DDFF44; /*kpn-neongroen*/
+    --accent2-kleur: #0066EE; /*blauwe kleur knoppen en links*/
+    --text-kleur: #ffffff; /*wit*/
+    --text2-kleur: #131313; /*zwart*/ 
+    --text3-kleur: #333333; /*grijs*/
+    --kpn-grijs: #dad9d9; 
+}
+
+/*****************/
+/* BASISTYLING */
+/*****************/
+
+@font-face {
+    font-family: 'koppen';
+    src: url('../fonts/metric-bold.woff2') format('woff2');
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+} 
+svg {
+    width: 2.2em;
+    height: 2.2em;
+    fill: var(--text2-kleur);
+}
+
+/****************/
+/* NAVIGATIE */
+/****************/
+
+header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--text-kleur);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items:center; 
+}
+
+/*---miniNav---*/
+.mini-nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    background-color: var(--main-kleur);
+    padding: 5px 20px;
+    width: 100%;
+    height: 30px;
+}
+.mini-nav a{
+    text-decoration: none;
+    color: var(--text2-kleur);
+    font-size: 12px;
+    padding: 5px 10px;
+}
+.mini-nav a:first-of-type{
+    background-color: var(--accent-kleur);
+    border-radius: 999px;
+}
+
+/*---mainNav---*/
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 70px;
+    position: relative;
+}
+/* KPN Logo */
+.main-nav img[alt="kpn logo"] {
+    width: auto;
+    height: 35px; 
+}
+/* Iconenlijst */
+.main-nav .icon-list {
+    list-style: none;
+    display: flex ;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    
+}
+.main-nav .icon-list li img {
+    width: 20px; /* Icon grootte */
+    height: 20px;
+}
+
+/*---- Zoekbalk Formulier----*/
+.main-nav .icon-list li:nth-child(2) {
+    cursor: pointer;
+}
+.main-nav form {
+    position: absolute; 
+    top: 100%; /* Onder de main-nav */
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--text-kleur);
+    z-index: 999;
+    border-top: 1px solid var(--kpn-grijs);
+    display: none; 
+    transition: opacity 0.3s ease;
+    align-items: center;
+}
+.main-nav form.active {
+    display: flex; /* Zichtbaar bij activatie */
+}
+.main-nav form input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+/* De knop in de form is nu de 'X' sluitknop */
+.main-nav form button {
+    background: none;
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.main-nav form button::after {
+    content: '×'; /* Gebruik het vermenigvuldigingsteken voor de 'X' */
+    font-size: 24px; 
+    color: #333;
+    display: block;
+}
+
+/*---menu lijst (Knop)----*/
+.menu-button {
+    background: #f0f0f0; 
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px; 
+    border-radius: 999px; 
+    margin-left: 10px; 
+}
+.menu-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+/* Standaard: toon de 'Open' staat, verberg de 'Sluit' staat */
+.menu-button .close-state {
+    display: none;
+}
+/* Wanneer de knop of een parent een 'active' of 'open' class krijgt: */
+.main-nav.menu-open .menu-button .open-state {
+    display: none; /* Verberg 'Menu' */
+}
+.main-nav.menu-open .menu-button .close-state {
+    display: flex; /* Toon 'Sluit' */
+    align-items: center;
+}
+
+/*---menu lijst (Hamburger Menu Inhoud)----*/
+.main-nav > ul:last-of-type {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: var(--text-kleur); 
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s;
+    z-index: 998; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border-top: 1px solid var(--kpn-grijs);
+}
+.main-nav > ul:last-of-type li { 
+    padding: 18px 20px; 
+    border-bottom: 1px solid var(--kpn-grijs); 
+}
+.main-nav > ul li {
+    padding: 10px 10px;
+    position: relative; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.main-nav > ul li a {
+    text-decoration: none;
+    display: flex; 
+    align-items: center;
+}
+.main-nav > ul:last-of-type li::after {
+    content: '›'; 
+    color: var(--kpn-grijs); 
+    position: absolute;
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* Activeer het menu wanneer .main-nav de class 'menu-open' heeft */
+.main-nav.menu-open > ul {
+    transform: translateY(0); 
+    opacity: 1;
+    visibility: visible;
+}
+.main-nav > ul:nth-of-type(2) li img {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+.main-nav > ul li:nth-child(5) {
+    margin-bottom: 20px; 
+}
+.main-nav > ul li:nth-child(6) {
+    border-top: 15px solid  #f0f0f0; 
+    padding-top: 18px;
+    margin-top: -5px; 
+}
+.main-nav > ul li:nth-child(7) {
+    border-bottom: 15px solid  #f0f0f0; 
+}
+.main-nav > ul li:last-child,
+.main-nav > ul li:nth-of-type(5) {
+    border-bottom: none;
+}
+
+/****************/
+/* FOOTER */
+/****************/
+
+footer section:nth-of-type(1) {
+    background-color: var(--main-kleur); 
+    padding: 1em; 
+}
+footer section:nth-of-type(1) h3{
+    color: var(--text3-kleur);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 330;
+    letter-spacing: 1px;
+    margin-bottom: 0.5em;
+}
+footer section:nth-of-type(1) p{
+    color: var(--text-kleur);
+    font-family: 'koppen',sans-serif;
+    font-size: 30px;
+    padding-left: 0;
+    margin: 0;
+}
+footer section:nth-of-type(1) a{
+    color: var(--text3-kleur);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 330;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+footer section:nth-of-type(1) svg{
+    width: 25px;
+    fill: var(--text3-kleur);
+}
+
+/*ul dropdown-menu*/ 
+footer > ul:first-of-type {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid #EAEAEA; 
+}
+footer > ul:first-of-type > li {
+    padding: 15px 10px;
+    border-bottom: 1px solid #EAEAEA; 
+    font-size: 15px;
+    font-weight: 400; 
+    color: var(--text3-kleur);
+    cursor: pointer; 
+    position: relative; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-right: 40px;
+    padding-left: 2em;
+}
+footer > ul:first-of-type ul {
+    list-style: none;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-left: 0; 
+    transition: all 0.3s ease-out; 
+    border-top: none; 
+}
+footer > ul:first-of-type ul li { 
+    font-size: 0.95rem;
+    padding: 10px 10px;
+    color: #555555;
+    border-bottom: 1px solid #F0F0F0; 
+    cursor: pointer;
+    display: block;
+}
+footer > ul:first-of-type ul li:last-of-type { 
+    border-bottom: none; 
+}
+footer > ul:first-of-type > li.active {
+    color: var(--kpn-green);  
+}
+footer > ul:first-of-type > li img {
+    width: 25px;
+    height: 25px;
+    transform: rotate(0deg); 
+    transition: transform 0.3s ease-in-out; 
+    filter: invert(41%) sepia(97%) saturate(1475%) hue-rotate(85deg) brightness(97%) contrast(101%);
+    position: absolute;
+    right: 10px; 
+    top: 20px;
+    transform: translateY(-50%) rotate(0deg);
+}
+footer > ul:first-of-type > li.active > img {
+    transform: translateY(-50%) rotate(180deg);
+}
+footer > ul:first-of-type ul.visible {
+    height: auto; 
+    opacity: 1;
+    overflow: visible;
+    padding-top: 10px;
+    transition: opacity 0.3s ease-out; 
+}
+
+/*laatste ul's*/
+footer > ul:nth-of-type(2) {
+    list-style: none;
+    padding: 20px 0; 
+    margin: 1em;
+    font-family: 'Poppins', sans-serif;
+    display: flex; 
+    flex-wrap: wrap; 
+    line-height: 20px; 
+    padding-left: 0.5em;
+}
+footer > ul:nth-of-type(2) li a {
+    font-size: 13px;
+    color: var(--text2-kleur);
+    text-decoration: none;
+    padding: 0 5px; 
+    white-space: nowrap; 
+}
+footer > ul:nth-of-type(2) li:not(:last-child)::after {
+    content: "•";
+    color: var(--text3-kleur);
+    font-size: 1.5rem; 
+    margin-right: 10px; 
+    vertical-align: middle;
+}
+/*mini-logos*/
+footer > ul:nth-of-type(3) {
+    list-style: none;
+    padding: 20px 0 40px; 
+    margin: 0;
+    padding-left: 1.5em;
+    font-family: 'Poppins', sans-serif;
+}
+footer > ul:nth-of-type(3) li {
+    display: inline-block;
+}
+footer > ul:nth-of-type(3) li img {
+    width: 25px; 
+    height: 25px;
+    margin: 10px;
+}
