@@ -22,7 +22,7 @@ main section:first-of-type img{
 }
 main section:first-of-type h1,
 main section:first-of-type p{
-	font-family: sans-serif;
+	font-family: var(--font-base);
 	color: var(--text-kleur);
 	margin: 0;  
 	padding: 20px 30px;
@@ -35,7 +35,7 @@ main section:first-of-type h1{
 main section:first-of-type p{
 	font-size: 43px;
 	font-weight: 900;
-	font-family: 'koppen', sans-serif;
+	font-family: var(--font-alt), sans-serif;
 	padding-top: 10px;
 }
 /*knoppen voor linkjes*/ 
@@ -61,7 +61,7 @@ main section:first-of-type a:nth-of-type(2){
 /*section 2*/
 section:nth-of-type(2) h2 {
 	color: var(--main-kleur2); 
-	font-family: 'koppen',sans-serif;
+	font-family: var(--font-alt),sans-serif;
 	font-size: 2.8em;
 	display: flex;
 	justify-content: flex-start;
@@ -90,7 +90,7 @@ section:nth-of-type(2) ul:first-of-type {
   
   /* Buttons */
 section:nth-of-type(2) button {
-	font-family: 'Poppins', sans-serif;
+	font-family: var(--font-base), sans-serif;
 	border: none;
 	border-radius: 999px;
 	padding: 10px 20px;
@@ -125,7 +125,7 @@ section:nth-of-type(2) button.active {
   
 .card-grid a {
 	text-decoration: none;
-	font-family: 'Poppins', sans-serif;
+	font-family: var(--font-base), sans-serif;
 	font-size: 18px;
 	font-weight: 350;
 	color: #0066ff;
@@ -159,7 +159,7 @@ section:nth-of-type(3) video {
 section:nth-of-type(3) h2,
 section:nth-of-type(3) h3,
 section:nth-of-type(3) p {
-	font-family: sans-serif;
+	font-family: var(--font-base),sans-serif;
 	color: var(--text-kleur);
 	margin: 0.5em 0;  /* gelijke verticale spacing */
 	padding: 0;
@@ -172,7 +172,7 @@ section:nth-of-type(3) h2 {
 }
   
 section:nth-of-type(3) h3 {
-	font-family: 'Poppins', sans-serif;
+	font-family: var(--font-alt), sans-serif;
 	font-size: 20px;
 	font-weight: 800;
 }
@@ -195,7 +195,7 @@ section:nth-of-type(3) > a {
 	border-radius: 999px;
 	color: var(--text3-kleur);
 	padding: 0.5em 1em;
-	font-family: sans-serif;
+	font-family: var(--font-base),sans-serif;
 	font-size: 15px;
 	font-weight: 400;
 }
@@ -208,14 +208,14 @@ section:nth-of-type(3) p a {
 	color: var(--text-kleur); 
 	text-decoration: underline;
 	font-weight: 200;
-	font-family:'Poppins',sans-serif ;
+	font-family:var(--font-base),sans-serif ;
 	letter-spacing: 0.5px;
 }
 
 /*section4*/
 section:nth-of-type(4) h2 {
 	color: var(--main-kleur2); 
-	font-family: 'koppen',sans-serif;
+	font-family: var(--font-alt),sans-serif;
 	font-size: 2.5em;
 	display: flex;
 	justify-content: flex-start;
@@ -248,12 +248,12 @@ section:nth-of-type(4) article a,img{
 }
 section:nth-of-type(4) article h3{
 	color: var(--main-kleur2);
-	font-family: 'koppen',sans-serif;
+	font-family: var(--font-alt),sans-serif;
 	font-size: 1.2em;
 	margin: 0;
 }
 section:nth-of-type(4) article p, a{
-	font-family: 'Poppins',sans-serif;
+	font-family: var(--font-base),sans-serif;
 	font-size: 15px;
 	font-weight: 200;
 	letter-spacing: 0.5px;
@@ -310,14 +310,14 @@ section:nth-of-type(5).is-in-view img:nth-of-type(3) {
 
 section:nth-of-type(5) h2{
 	color: var(--text2-kleur); 
-	font-family: 'Poppins',sans-serif;
+	font-family: var(--font-base),sans-serif;
 	font-size: 15px;
 	font-weight: 500;
 	letter-spacing: 0.5px;
 }
 section:nth-of-type(5) h3{
 	color: var(--text-kleur); 
-	font-family: 'koppen',sans-serif;
+	font-family: var(--font-alt),sans-serif;
 	font-size: 2.5em;
 	display: flex;
 	justify-content: flex-start;
@@ -329,7 +329,7 @@ section:nth-of-type(5) h3 span{
 } 
 section:nth-of-type(5) p{
 	color: var(--text2-kleur); 
-	font-family: 'Poppins',sans-serif;
+	font-family: var(--font-base),sans-serif;
 	font-size: 15px;
 	font-weight: 500;
 	letter-spacing: 0.5px;
@@ -347,7 +347,7 @@ section:nth-of-type(5) >a:first-of-type{
 	border-radius: 999px;
 	color: var(--text2-kleur);
 	padding: 0.8em 1em;
-	font-family: sans-serif;
+	font-family: var(--font-base),sans-serif;
 	font-size: 15px;
 	font-weight: 500;
 }
@@ -364,7 +364,7 @@ section:nth-of-type(5) a:nth-of-type(2){
 	border-radius: 999px;
 	color: var(--text2-kleur);
 	padding: 0.8em 1em;
-	font-family: sans-serif;
+	font-family: var(--font-base),sans-serif;
 	font-size: 15px;
 	font-weight: 500;
 }
@@ -388,7 +388,7 @@ section:nth-of-type(6) h2,
 section:nth-of-type(7) h2
 {
 	color: var(--main-kleur2); 
-	font-family: 'koppen',sans-serif;
+	font-family: var(--font-alt),sans-serif;
 	font-size: 2.5em;
 	display: flex;
 	justify-content: flex-start;
@@ -399,13 +399,17 @@ section:nth-of-type(7) h2
 section:nth-of-type(6) article {
     background-color: #fff;
 	display: grid;
-	grid-template-columns: (2,1fr);
     border-radius: 30px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-base), sans-serif;
     overflow: hidden; /* Belangrijk voor afgeronde hoeken */
     margin: 15px ;
 	
+}
+section:nth-of-type(6) .a-container {
+    display: flex; /* Zet de elementen naast elkaar */
+    align-items: center; 
+   
 }
 
 section:nth-of-type(6) article img {
@@ -426,14 +430,13 @@ section:nth-of-type(6) article h3{
 }
 section:nth-of-type(6) article p{
 	color: var(--main-kleur2);
-	font-family: 'koppen',sans-serif;
+	font-family: var(--font-alt),sans-serif;
 	font-size: 22px;
 	font-weight: 800;
 	letter-spacing: 0.5px;
 	margin: 0.6em;
 	margin-top: 0;
 }
-
 section:nth-of-type(6) article a {
   display: flex;
   align-items: center;
@@ -442,18 +445,17 @@ section:nth-of-type(6) article a {
   border: 2px solid var(--accent2-kleur);
   border-radius: 999px;
   padding: 0.6em 1.5em;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-base), sans-serif;
   font-size: 15px;
   font-weight: 500;
   color: var(--accent2-kleur);
   background-color: transparent;
   margin: 1em;
-  width: 20em;
-  
 }
 section:nth-of-type(6) article:not(:first-of-type) a:first-of-type{
   background-color: var(--accent2-kleur);
   color: var(--text-kleur);
+  margin-right: 0;
   
 }
 section:nth-of-type(6) article:not(:first-of-type) a:first-of-type,
@@ -467,8 +469,7 @@ section:nth-of-type(6) article:not(:first-of-type) a:nth-of-type(2){
 section:nth-of-type(7) p{
 	font-size: 15px;
 	font-weight: 350;
-	letter-spacing: 1.1px;
-	font-family: 'Poppins',sans-serif;
+	font-family: var(--font-base),sans-serif;
 	padding: 1.2em;
 	margin: 0;
 }
@@ -478,8 +479,7 @@ section:nth-of-type(7) h2{
 section:nth-of-type(7) li p{
 	font-size: 15px;
 	font-weight: 350;
-	letter-spacing: 1.1px;
-	font-family: 'Poppins',sans-serif;
+	font-family: var(--font-base),sans-serif;
 	padding-left: 2em;
 	margin-top: 2em;
 	width: 200px;
@@ -491,7 +491,7 @@ section:nth-of-type(7) .sticker{
 	position: absolute;
 	top: 80px;
 	left: 150px;
-	font-family: 'koppen',sans-serif;
+	font-family: var(--font-alt),sans-serif;
 	font-size: 15px;
 	line-height: 1;
 	padding: 13px ;
@@ -534,16 +534,15 @@ section:nth-of-type(7) li img:nth-of-type(2){
 	left: 3.5em;
 }
 section:nth-of-type(7) h3{
-	font-family: 'Poppins',sans-serif;
+	font-family: var(--font-base),sans-serif;
 	font-size: 15px;
 	font-weight: 350;
-	letter-spacing: 1.1px;
 	color: var(--text2-kleur);
 	padding-left: 2em;
 	margin: 0;
 }
 section:nth-of-type(7) h4{
-	font-family: 'koppen',sans-serif;
+	font-family: var(--font-alt),sans-serif;
 	font-size: 30px;
 	margin: 0;
 	margin-top: 0.5em;
@@ -552,7 +551,7 @@ section:nth-of-type(7) h4{
 }
 section:nth-of-type(7) button{
 	background-color: var(--accent2-kleur); 
-     border: none;
+    border: none;
     padding: 0.35rem; 
     border-radius: 50%;
     cursor: pointer;
@@ -585,9 +584,8 @@ section:nth-of-type(7) a:first-of-type{
 }
 section:nth-of-type(7) a:nth-of-type(2){
 	color: var(--accent2-kleur);
-	font-family: 'Poppins',sans-serif;
+	font-family: var(--font-base),sans-serif;
 	font-weight: 350;
-	letter-spacing: 1.1px;
 	padding: 1em;
 	margin-left: 1.1em;
 	flex-direction: row;
@@ -596,7 +594,7 @@ section:nth-of-type(7) a:nth-of-type(2){
 /*section 8*/
 section:nth-of-type(8) h2{
 	color: var(--main-kleur2); 
-	font-family: 'koppen',sans-serif;
+	font-family: var(--font-alt),sans-serif;
 	font-size: 2.5em;
 	padding-left: 0.5em;
 	margin-bottom: 0;
@@ -623,7 +621,7 @@ section:nth-of-type(8) li img{
 }
 section:nth-of-type(8) a{
 	color: var(--accent2-kleur);
-	font-family: 'Poppins',sans-serif;
+	font-family: var(--font-base),sans-serif;
 	font-weight: 350;
 	letter-spacing: 1.1px;
 	padding: 1em;
@@ -639,7 +637,7 @@ section:nth-of-type(8) svg{
 /*section 9*/
 section:nth-of-type(9) h2{
 	color: var(--main-kleur2); 
-	font-family: 'koppen',sans-serif;
+	font-family: var(--font-alt),sans-serif;
 	font-size: 2.5em;
 	padding-left: 0.5em;
 	margin-bottom: 0;
@@ -648,7 +646,7 @@ section:nth-of-type(9) p{
 	font-size: 15px;
 	font-weight: 350;
 	letter-spacing: 1.1px;
-	font-family: 'Poppins',sans-serif;
+	font-family: var(--font-base),sans-serif;
 	padding: 1.2em;
 	margin: 0;
 }
@@ -670,7 +668,7 @@ section:nth-of-type(9) li{
 	display: grid;
     border-radius: 30px; 
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-base), sans-serif;
     overflow: hidden; /* Belangrijk voor afgeronde hoeken */
     margin: 15px 0px;
 	list-style: none;
@@ -688,18 +686,21 @@ section:nth-of-type(9) ul img {
 }
 section:nth-of-type(9) ul h3{
 	color: var(--main-kleur2); 
-	font-family: 'koppen',sans-serif;
+	font-family: var(--font-alt),sans-serif;
 	font-size: 1.5em;
 	padding-left: 0.5em;
+	margin: 0;
 }
 section:nth-of-type(9) ul a{
-	font-family: 'Poppins',sans-serif;
+	font-family: var(--font-base),sans-serif;
 	font-size: 1em;
 	font-weight: 100;
 	color: var(--accent2-kleur);
-	line-height: 1px;
 	text-decoration: none;
-	padding-left: 0.8em;	
+	padding: 0.8em;	 
+	display: flex;
+	align-items: center; 
+	width: 270px;
 }
 section:nth-of-type(9) ul a svg{
 	fill: var(--accent2-kleur);
@@ -709,7 +710,7 @@ section:nth-of-type(9) ul a svg{
 /*section 10*/ 
 section:nth-of-type(10) h2{
 	color: var(--main-kleur2); 
-	font-family: 'koppen',sans-serif;
+	font-family: var(--font-alt),sans-serif;
 	font-size: 2.5em;
 	padding-left: 0.5em;
 	
@@ -723,7 +724,7 @@ section:nth-of-type(10) ul{
 	margin: 1em;
 	padding: 0;
 	height: 460px;
-	font-family: 'Poppins', sans-serif;
+	font-family: var(--font-base), sans-serif;
 }
 section:nth-of-type(10) ul:nth-of-type(2){ 
 	height: 630px;
@@ -778,7 +779,7 @@ section:nth-of-type(10) ul:first-of-type li:nth-child(n+3) img {
 
 
 section:nth-of-type(10) h3{
-	font-family: 'koppen', sans-serif;
+	font-family: var(--font-alt), sans-serif;
 	font-size: 25px;
 	color: var(--main-kleur2);
 	padding-left: 0.5em;
@@ -791,7 +792,7 @@ section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(3) h3{
 	margin-top: 0.2em ;
 }
 section:nth-of-type(10) li p{
-	font-family: 'Poppins', sans-serif;
+	font-family: var(--font-base), sans-serif;
 	font-size: 16px;
 	font-weight: 200;
 	padding-left: 1.5em;
@@ -805,7 +806,7 @@ section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(5) svg,
 section:nth-of-type(10) ul:nth-of-type(2) li:nth-child(6) svg {
     width: 20px;
     height: 20px;
-    fill: #00A91D;
+    fill: var(--main-kleur2);
     margin-right: 10px;
     flex-shrink: 0;
 }
@@ -820,7 +821,7 @@ section:nth-of-type(10) ul:nth-of-type(2) a {
     display: block;
     border-radius: 50px;
     width: 300px;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-base), sans-serif;
     font-size: 15px;
     font-weight: 300;
     text-align: center;

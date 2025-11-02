@@ -8,34 +8,100 @@
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
-:root{
-    --main-kleur: #00C300; /*kpn-groen*/
-    --main-kleur2: #00A800; /*kpn-donkergroen*/
-    --accent-kleur: #DDFF44; /*kpn-neongroen*/
-    --accent2-kleur: #0066EE; /*blauwe kleur knoppen en links*/
-    --text-kleur: #ffffff; /*wit*/
-    --text2-kleur: #131313; /*zwart*/ 
-    --text3-kleur: #333333; /*grijs*/
-    --kpn-grijs: #dad9d9; 
+:root {
+    
+    /* Accentkleuren (blijven in beide modi hetzelfde) */
+    --main-kleur: #00C300;     /* kpn-groen */
+    --main-kleur2: #00A800;    /* kpn-donkergroen */
+    --accent-kleur: #DDFF44;   /* kpn-neongroen */
+    --accent2-kleur: #0066EE;  /* blauwe kleur knoppen en links */
+
+    /* Light Mode Standaard */
+    --ACHTERGROND: #ffffff;      
+    --TEKST: #131313;            
+    --TEKST-SECUNDAIR: #333333;  
+    --RAND: #dad9d9;             
+
+    --text-kleur: var(--ACHTERGROND); 
+    --text2-kleur: var(--TEKST);     
+    --text3-kleur: var(--TEKST-SECUNDAIR); 
+    --kpn-grijs: var(--RAND);          
+
+    /* Fonts */
+    --font-base: 'Quicksand', sans-serif; 
+    --font-alt: 'koppen', sans-serif;    
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ACHTERGROND: #121212;  /* Zeer donkergrijs */
+        --TEKST: #E0E0E0;        /* Lichtgrijs */
+        --TEKST-SECUNDAIR: #A0A0A0; /* Iets donkerdere lichte tekst */
+        --RAND: #333333;         /* Donkere randen */
+    }
 }
 
 /*****************/
 /* BASISTYLING */
 /*****************/
-
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+}
 @font-face {
     font-family: 'koppen';
     src: url('../fonts/metric-bold.woff2') format('woff2');
 }
+
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-base);
+    /* Gebruik de Achtergrond en Tekst variabelen */
+    background-color: var(--ACHTERGROND); 
+    color: var(--TEKST);
+    transition: background-color 0.3s, color 0.3s;
 } 
 svg {
     width: 2.2em;
     height: 2.2em;
-    fill: var(--text2-kleur);
+    /* Gebruik de Tekst variabele */
+    fill: var(--TEKST);
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none; 
+    font-family: var(--font-base); 
+    color: var(--accent2-kleur);
+}
+section:nth-of-type(2) fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+section:nth-of-type(4) input,
+section:nth-of-type(5) input[type="radio"] {
+    display: none; 
+}
+.info-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--accent2-kleur);
+    /* Gebruik de Achtergrond variabele (lichte tekst op de blauwe cirkel) */
+    color: var(--ACHTERGROND);
+    font-style: normal;
+    font-size: 12px;
+    margin-left: 5px;
+    flex-shrink: 0;
+    font-family: var(--font-alt);
 }
 
 /****************/
@@ -47,7 +113,8 @@ header{
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--text-kleur);
+    /* Gebruik de Achtergrond variabele */
+    background-color: var(--ACHTERGROND);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     align-items:center; 
 }
@@ -65,7 +132,8 @@ header{
 }
 .mini-nav a{
     text-decoration: none;
-    color: var(--text2-kleur);
+    /* Gebruik de Tekst variabele */
+    color: var(--TEKST);
     font-size: 12px;
     padding: 5px 10px;
 }
@@ -99,7 +167,7 @@ header{
     
 }
 .main-nav .icon-list li img {
-    width: 20px; /* Icon grootte */
+    width: 20px; 
     height: 20px;
 }
 
@@ -109,19 +177,21 @@ header{
 }
 .main-nav form {
     position: absolute; 
-    top: 100%; /* Onder de main-nav */
+    top: 100%; 
     left: 0;
     width: 100%;
     padding: 10px 20px;
-    background-color: var(--text-kleur);
+    /* Gebruik de Achtergrond variabele */
+    background-color: var(--ACHTERGROND);
     z-index: 999;
-    border-top: 1px solid var(--kpn-grijs);
+    /* Gebruik de Rand variabele */
+    border-top: 1px solid var(--RAND);
     display: none; 
     transition: opacity 0.3s ease;
     align-items: center;
 }
 .main-nav form.active {
-    display: flex; /* Zichtbaar bij activatie */
+    display: flex; 
 }
 .main-nav form input[type="text"] {
     flex-grow: 1;
@@ -129,6 +199,9 @@ header{
     border: none;
     font-size: 16px;
     outline: none;
+    /* Gebruik de Achtergrond en Tekst variabelen */
+    color: var(--TEKST);
+    background-color: var(--ACHTERGROND);
 }
 /* De knop in de form is nu de 'X' sluitknop */
 .main-nav form button {
@@ -138,15 +211,17 @@ header{
     cursor: pointer;
 }
 .main-nav form button::after {
-    content: '×'; /* Gebruik het vermenigvuldigingsteken voor de 'X' */
+    content: '×'; 
     font-size: 24px; 
-    color: #333;
+    /* Gebruik de Secundaire Tekst variabele */
+    color: var(--TEKST-SECUNDAIR);
     display: block;
 }
 
 /*---menu lijst (Knop)----*/
 .menu-button {
-    background: #f0f0f0; 
+    /* Gebruik de Rand variabele voor de knop achtergrond */
+    background: var(--RAND); 
     border: none;
     cursor: pointer;
     font-size: 16px;
@@ -156,6 +231,8 @@ header{
     padding: 8px 12px; 
     border-radius: 999px; 
     margin-left: 10px; 
+    /* Gebruik de Tekst variabele */
+    color: var(--TEKST);
 }
 .menu-button img {
     width: 20px;
@@ -185,7 +262,8 @@ header{
     position: absolute;
     top: 100%; 
     left: 0;
-    background-color: var(--text-kleur); 
+    /* Gebruik de Achtergrond variabele */
+    background-color: var(--ACHTERGROND); 
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -193,11 +271,15 @@ header{
     z-index: 998; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
-    border-top: 1px solid var(--kpn-grijs);
+    /* Gebruik de Rand variabele */
+    border-top: 1px solid var(--RAND);
+    /* Gebruik de Tekst variabele */
+    color: var(--TEKST);
 }
 .main-nav > ul:last-of-type li { 
     padding: 18px 20px; 
-    border-bottom: 1px solid var(--kpn-grijs); 
+    /* Gebruik de Rand variabele */
+    border-bottom: 1px solid var(--RAND); 
 }
 .main-nav > ul li {
     padding: 10px 10px;
@@ -206,21 +288,26 @@ header{
     display: flex;
     align-items: center;
     margin: 0;
+    /* Gebruik de Tekst variabele */
+    color: var(--TEKST);
 }
 .main-nav > ul li a {
     text-decoration: none;
     display: flex; 
     align-items: center;
+    /* Gebruik de Tekst variabele */
+    color: var(--TEKST);
 }
 .main-nav > ul:last-of-type li::after {
     content: '›'; 
-    color: var(--kpn-grijs); 
+    /* Gebruik de Rand variabele */
+    color: var(--RAND); 
     position: absolute;
     right: 20px; 
     top: 50%;
     transform: translateY(-50%);
 }
-/* Activeer het menu wanneer .main-nav de class 'menu-open' heeft */
+
 .main-nav.menu-open > ul {
     transform: translateY(0); 
     opacity: 1;
@@ -235,12 +322,14 @@ header{
     margin-bottom: 20px; 
 }
 .main-nav > ul li:nth-child(6) {
-    border-top: 15px solid  #f0f0f0; 
+    /* Gebruik de Rand variabele */
+    border-top: 15px solid  var(--RAND); 
     padding-top: 18px;
     margin-top: -5px; 
 }
 .main-nav > ul li:nth-child(7) {
-    border-bottom: 15px solid  #f0f0f0; 
+    /* Gebruik de Rand variabele */
+    border-bottom: 15px solid  var(--RAND); 
 }
 .main-nav > ul li:last-child,
 .main-nav > ul li:nth-of-type(5) {
@@ -256,33 +345,37 @@ footer section:nth-of-type(1) {
     padding: 1em; 
 }
 footer section:nth-of-type(1) h3{
-    color: var(--text3-kleur);
-    font-family: 'Poppins', sans-serif;
+    /* Gebruik de Secundaire Tekst variabele */
+    color: var(--TEKST-SECUNDAIR);
+    font-family: var(--font-base);
     font-size: 15px;
-    font-weight: 330;
+    font-weight: 400;
     letter-spacing: 1px;
     margin-bottom: 0.5em;
 }
 footer section:nth-of-type(1) p{
-    color: var(--text-kleur);
-    font-family: 'koppen',sans-serif;
+    /* Gebruik de Achtergrond variabele (lichte tekst op groen) */
+    color: var(--ACHTERGROND);
+    font-family: var(--font-alt);
     font-size: 30px;
     padding-left: 0;
     margin: 0;
 }
 footer section:nth-of-type(1) a{
-    color: var(--text3-kleur);
-    font-family: 'Poppins', sans-serif;
+    /* Gebruik de Secundaire Tekst variabele */
+    color: var(--TEKST-SECUNDAIR);
+    font-family: var(--font-base);
     font-size: 15px;
-    font-weight: 330;
     letter-spacing: 1px;
     display: flex;
     align-items: center;
     gap: 4px;
+    text-decoration: none;
 }
 footer section:nth-of-type(1) svg{
     width: 25px;
-    fill: var(--text3-kleur);
+    /* Gebruik de Secundaire Tekst variabele */
+    fill: var(--TEKST-SECUNDAIR);
 }
 
 /*ul dropdown-menu*/ 
@@ -290,15 +383,20 @@ footer > ul:first-of-type {
     list-style: none; 
     padding: 0;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    border-top: 1px solid #EAEAEA; 
+    font-family: var(--font-base);
+    /* Gebruik de Rand variabele */
+    border-top: 1px solid var(--RAND); 
+    /* Gebruik de Achtergrond variabele */
+    background-color: var(--ACHTERGROND);
 }
 footer > ul:first-of-type > li {
     padding: 15px 10px;
-    border-bottom: 1px solid #EAEAEA; 
+    /* Gebruik de Rand variabele */
+    border-bottom: 1px solid var(--RAND); 
     font-size: 15px;
     font-weight: 400; 
-    color: var(--text3-kleur);
+    /* Gebruik de Secundaire Tekst variabele */
+    color: var(--TEKST-SECUNDAIR);
     cursor: pointer; 
     position: relative; 
     display: flex;
@@ -315,12 +413,16 @@ footer > ul:first-of-type ul {
     padding-left: 0; 
     transition: all 0.3s ease-out; 
     border-top: none; 
+    /* Gebruik de Achtergrond variabele */
+    background-color: var(--ACHTERGROND);
 }
 footer > ul:first-of-type ul li { 
     font-size: 0.95rem;
     padding: 10px 10px;
-    color: #555555;
-    border-bottom: 1px solid #F0F0F0; 
+    /* Gebruik de Secundaire Tekst variabele */
+    color: var(--TEKST-SECUNDAIR);
+    /* Gebruik de Rand variabele */
+    border-bottom: 1px solid var(--RAND); 
     cursor: pointer;
     display: block;
 }
@@ -328,7 +430,7 @@ footer > ul:first-of-type ul li:last-of-type {
     border-bottom: none; 
 }
 footer > ul:first-of-type > li.active {
-    color: var(--kpn-green);  
+    color: var(--main-kleur);  
 }
 footer > ul:first-of-type > li img {
     width: 25px;
@@ -357,22 +459,26 @@ footer > ul:nth-of-type(2) {
     list-style: none;
     padding: 20px 0; 
     margin: 1em;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-base);
     display: flex; 
     flex-wrap: wrap; 
     line-height: 20px; 
     padding-left: 0.5em;
+    /* Gebruik de Achtergrond variabele */
+    background-color: var(--ACHTERGROND);
 }
 footer > ul:nth-of-type(2) li a {
     font-size: 13px;
-    color: var(--text2-kleur);
+    /* Gebruik de Tekst variabele */
+    color: var(--TEKST);
     text-decoration: none;
     padding: 0 5px; 
     white-space: nowrap; 
 }
 footer > ul:nth-of-type(2) li:not(:last-child)::after {
     content: "•";
-    color: var(--text3-kleur);
+    /* Gebruik de Secundaire Tekst variabele */
+    color: var(--TEKST-SECUNDAIR);
     font-size: 1.5rem; 
     margin-right: 10px; 
     vertical-align: middle;
@@ -383,7 +489,9 @@ footer > ul:nth-of-type(3) {
     padding: 20px 0 40px; 
     margin: 0;
     padding-left: 1.5em;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-base);
+    /* Gebruik de Achtergrond variabele */
+    background-color: var(--ACHTERGROND);
 }
 footer > ul:nth-of-type(3) li {
     display: inline-block;
