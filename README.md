@@ -37,14 +37,14 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Je opdracht:
   link naar de website die je gaat namaken óf de naam/omschrijving van je eigen ontwerp
-https://www.kpn.com/?tv=ja&?icid=quicktile1
+  https://www.kpn.com/?tv=ja&?icid=quicktile1
   #### Screenshot(s) van de eerste pagina (small screen): 
   hier de naam van de pagina 
-  KPN
+  KPN-home pagina
   <img src="readme-images/screenshot page 1.png" width="375px" alt="home pagina van kpn">
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  hier de naam van de pagina  
+  hier de naam van de pagina KNP-shop pagina   
   <img src="readme-images/screenshot page 2.png" width="375px" alt="shop pagina van kpn">
  
 </details>
@@ -214,19 +214,19 @@ https://www.kpn.com/?tv=ja&?icid=quicktile1
   <summary>uitwerken voor eindgesprek</summary>
 
   ### Je uitkomst - karakteristiek screenshots:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="uitomst opdracht 1">
+ 
 
 
   ### Dit ging goed/Heb ik geleerd: 
   Korte omschrijving met plaatjes
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  
 
 
   ### Dit was lastig/Is niet gelukt:
   Korte omschrijving met plaatjes
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  
 </details>
 
 
@@ -242,8 +242,21 @@ https://www.kpn.com/?tv=ja&?icid=quicktile1
   Nb. ChatGpT en andere AI horen er ook bij.
   Nb. Vermeld de bronnen ook in je code.
 
-  1. bron 1
-  2. bron 2
-  3. ...
+  1. https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+  2. https://css-tricks.com/snippets/css/complete-guide-grid/
+  3. https://css-tricks.com/almanac/properties/j/justify-items/
+  4. https://www.w3schools.com/css/css_navbar.asp
+  5. https://www.w3schools.com/css/css_pseudo_elements.asp
+  6. https://www.w3schools.com/css/css_combinators.asp
+  7. https://www.w3schools.com/css/css_z-index.asp
+  8. https://www.w3schools.com/css/css_overflow.asp
+  9. https://www.w3schools.com/css/css3_animations.asp
+  10. https://www.w3schools.com/css/css3_mediaqueries.asp
+  11. https://www.youtube.com/watch?v=QhhYZJFOZnY
+  12. https://www.youtube.com/watch?v=wsTv9y931o8&t=1006s
+  13. https://www.youtube.com/watch?v=EiNiSFIPIQE&t=167s
+  14. https://www.youtube.com/watch?v=1TZjgQ0Osic&t=511s
+  15. https://chatgpt.com
+  16. https://gemini.google.com/app?hl=nl
 
 </details>
