@@ -22,7 +22,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Blauw
 
   #### Je focus:
-  Responsive
+  Ik wou eerst responsive doen, maar heb uiteindelijk gekozen om voor de surface plane te gaan. 
  
 </details>
 
@@ -40,11 +40,12 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   https://www.kpn.com/?tv=ja&?icid=quicktile1
   #### Screenshot(s) van de eerste pagina (small screen): 
   hier de naam van de pagina 
-  KPN-home pagina
+  KPN-home page
   <img src="readme-images/screenshot page 1.png" width="375px" alt="home pagina van kpn">
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  hier de naam van de pagina KNP-shop pagina   
+  hier de naam van de pagina 
+  KNP-shop pagina  
   <img src="readme-images/screenshot page 2.png" width="375px" alt="shop pagina van kpn">
  
 </details>
@@ -57,19 +58,12 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken na test in 2<sup>e</sup> werkgroep</summary>
 
   ### Bevindingen
-  Lijst met je bevindingen die in de test naar voren kwamen: 
-  content: was goed. 
-  global code: had 720 errors.
-  keyboard: was ook goed. 
-  mobile and touch: remove horizontal scrolling werkte niet. 
-  headings: was onvoldoende gescord, alleen 'use heading elements to introduce content' had een Yes.
-  list: onvoldoende. 
-  images: allemaal onvoldoende gescoord. 
-  Media: alles was onvoldoende, behalve 'make sure that media can be paused'. 
-  controles: was goed. 
-  appearance: was 50/50, de dark/light mode was niet supported en high-contrast ook niet. 
-  animation: was goed. 
-  color contrast: was goed.  
+<img src="readme-images/IMG_9863.JPG">  
+<img src="readme-images/IMG_9864.JPG"> 
+<img src="readme-images/IMG_9865.JPG"> 
+<img src="readme-images/IMG_9867.JPG"> 
+<img src="readme-images/IMG_9868.JPG"> 
+
 
 </details>
 
@@ -167,7 +161,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken na test in 9<sup>e</sup> werkgroep</summary>
 
   ### Bevindingen
-  Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
+<img src="readme-images/IMG_9869.JPG"> 
+<img src="readme-images/IMG_9870.JPG"> 
+<img src="readme-images/IMG_9871.JPG"> 
+<img src="readme-images/IMG_9872.JPG"> 
+<img src="readme-images/IMG_9873.JPG">  
 
 </details>
 
@@ -213,20 +211,17 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 <details>
   <summary>uitwerken voor eindgesprek</summary>
 
-  ### Je uitkomst - karakteristiek screenshots:
- 
-
-
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatjes
-
-  
+  Ik ben erg trots op wat ik heb gemaakt. Ik weet dat het niet perfect is en dat er veel dingen anders hadden gekund, maar ik heb mijn best gedaan en uiteindelijk een mooie site weten te maken. Wat ik heb geleerd is dat coderen veel tijd en geduld kost, iets waar ik nog aan moet werken. 
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatjes
 
-  
+  Ik vond het moeilijker dan ik had gedacht, vooral omdat ik soms lang vastzat op een stukje code dat maar niet wilde meewerken. Dat kostte me veel tijd, maar uiteindelijk is het me wel gelukt om het op te lossen. Waar ik vooral tegenaan liep, was de tijdsdruk die we hadden. Ik merkte ook dat ik het werk erg aan het uitstellen was, waardoor ik pas laat begon aan de herkansing. Wat me niet goed is gelukt, is het bijhouden van mijn bronnen en de feedbackmomenten.
+
+  Wat ik lastig vond, was het precies namaken van de originele site. Mijn site veranderde namelijk om de week, en de screenshots die ik had waren niet volledig. Daardoor moest ik op sommige plekken een eigen invulling geven. Ik vind coderen best lastig en merk dat het niet echt iets voor mij is; ik haal meer plezier uit het ontwerpen van websites dan uit het bouwen ervan. Het proces gaf me vooral stress.
+  Ook de dark mode is niet zo goed gelukt. Ik vind dat die er niet zo mooi uitziet, maar ik had helaas geen tijd meer om dit beter uit te werken.
+  Ik merkte ook dat het gebruik van AI om mij te helpen met mijn code niet altijd even goed ging. Soms begreep het mijn vraag niet of gaf het iets totaal anders dan waar ik om vroeg. De codevoorbeelden die ik kreeg, werkten vaak ook niet goed.
 </details>
 
 
